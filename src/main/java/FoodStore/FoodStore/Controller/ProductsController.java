@@ -5,26 +5,15 @@ import FoodStore.FoodStore.Repository.CategoryRepository;
 import FoodStore.FoodStore.Repository.Category_ProductRepository;
 import FoodStore.FoodStore.Repository.ProductsRepository;
 import FoodStore.FoodStore.Service.*;
-//import com.sun.org.apache.xpath.internal.operations.Mod;
-import FoodStore.FoodStore.Service.Impl.Catergory_ProductImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.print.attribute.Attribute;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class ProductsController {
@@ -197,7 +186,7 @@ public class ProductsController {
         }
     }
 
-    @GetMapping("checkout")
+    @GetMapping("/checkout")
     public String checkout(Model model) throws Exception {
 //        @SuppressWarnings("")
         User u = (User) session.getAttribute("account");
